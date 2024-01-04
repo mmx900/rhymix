@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  rhymix:
+      build: ./
+      volumes:
+          - ./:/var/www/html
+      ports:
+          - '8080:80'
+      networks:
+          test:
+              ipv4_address: 10.1.0.100
+  mysql:
+      image: mysql:5.6.40
+      ports:
+          - "3306:3306"
+      environment:
+          - MYSQL_DATABASE=rhymix
+          - MYSQL_USER=rhymix
+          - MYSQL_PASSWORD=rhymix
+          - MYSQL_ROOT_PASSWORD=mysql-root
+      networks:
+          test:
+              ipv4_address: 10.1.0.101
+
+networks:
+    test:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.1.0.0/24
+
+  # docker exec -it e6e26a960359 로 들어간 다음, mkdir files, chmod 777 files를 차례로 실행하세요.
+  # 라이선스 동의화면을 거치지 않고 진입하는 경우 세션 오류가 표시됩니다. install.controller.php L321 참고.
+  # 설치시 MySQL host를 mysql 로 설정합니다.
+  # DB는 mysql (서비스 이름) 으로 연결하면 됨.
+    # IP가 매번 바뀌면 곤란해지므로 IP 설정.
+      # 근데 이러면 mysql 이 이름으로 지정이 안 되길래... files/config/config.php 안의 url -> default 주소를 바꿔준다.
+  # TODO : mariaDB 로 변경. PHP 7.4(권장), 8.x 이상으로 업그레이드.
