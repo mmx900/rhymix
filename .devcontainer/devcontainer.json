@@ -1,0 +1,11 @@
+{
+  "name": "Rhymix",
+  "dockerComposeFile": "compose.yaml",
+  "service": "rhymix",
+  "workspaceFolder": "/var/www/html",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "forwardPorts": [80, 3306],
+  "extensions": []
+}
