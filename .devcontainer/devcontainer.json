@@ -3,6 +3,7 @@
   "dockerComposeFile": "compose.yaml",
   "service": "rhymix",
   "workspaceFolder": "/var/www/html",
+  "postCreateCommand": "bash .devcontainer/init_workspace.sh",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },

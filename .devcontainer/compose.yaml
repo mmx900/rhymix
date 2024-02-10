@@ -18,6 +18,5 @@ services:
           - MYSQL_PASSWORD=rhymix
           - MYSQL_ROOT_PASSWORD=mysql-root
 
-  # docker exec -it e6e26a960359 로 들어간 다음, mkdir files, chmod 777 files를 차례로 실행하세요.
   # 라이선스 동의화면을 거치지 않고 진입하는 경우 세션 오류가 표시됩니다. install.controller.php L321 참고.
   # 설치시 MySQL host를 mysql 로 설정합니다.
