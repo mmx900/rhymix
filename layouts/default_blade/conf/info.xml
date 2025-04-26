@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.2">
-    <title xml:lang="ko">기본 레이아웃</title>
+    <title xml:lang="ko">기본 레이아웃-blade</title>
     <title xml:lang="en">Default Layout</title>
     <description xml:lang="ko">사이트 기본 레이아웃.</description>
     <description xml:lang="en">Site default layout.</description>

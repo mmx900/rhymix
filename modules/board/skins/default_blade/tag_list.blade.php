@@ -1,27 +1,27 @@
-<include target="_header.html" />
+<include target="_header.blade.php" />
 <div class="tagList">
-	<!--@foreach($tag_list as $val)-->
-		<!--@if($val->count>5)-->
+	@foreach($tag_list as $val)
+		@if($val->count>5)
 			{@ $tag_class = "rank1" }
-		<!--@elseif($val->count>3)-->
+		@elseif($val->count>3)
 			{@ $tag_class = "rank2" }
-		<!--@elseif($val->count>2)-->
+		@elseif($val->count>2)
 			{@ $tag_class = "rank3" }
-		<!--@elseif($val->count>1)-->
+		@elseif($val->count>1)
 			{@ $tag_class = "rank4" }
-		<!--@else-->
+		@else
 			{@ $tag_class = "rank5" }
-		<!--@end-->
+		@endif
 
-		<!--@if($layout_info->mid)-->
+		@if($layout_info->mid)
 			<a class="{$tag_class}"|cond="$tag_class" href="{getUrl('','mid',$layout_info->mid,'search_target','tag','search_keyword',$val->tag)}">{htmlspecialchars($val->tag)}</a>
-		<!--@else-->
+		@else
 			<a class="{$tag_class}"|cond="$tag_class" href="{getUrl('','mid',$mid,'search_target','tag','search_keyword',$val->tag)}">{htmlspecialchars($val->tag)}</a>
-		<!--@end-->
+		@end
 
-	<!--@end-->
+	@endforeach
 </div>
 <div class="tagFooter">
     <a href="{getUrl('act','')}" class="btn">{$lang->cmd_back}</a>
 </div>
-<include target="_footer.html" />
+<include target="_footer.blade.php" />

@@ -1,4 +1,4 @@
-<include target="_header.html" />
+<include target="_header.blade.php" />
 <form action="./" method="get" onsubmit="return procFilter(this, delete_trackback)" class="context_message">
 	<input type="hidden" name="mid" value="{$mid}" />
 	<input type="hidden" name="page" value="{$page}" />
@@ -10,4 +10,4 @@
 		<button type="button" class="btn" onclick="history.back()">{$lang->cmd_cancel}</button>
 	</div>
 </form>
-<include target="_footer.html" />
+<include target="_footer.blade.php" />

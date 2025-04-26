@@ -1,10 +1,12 @@
-<include target="_header.html" />
-<div cond="$oDocument->isExists()" class="context_data">
-	<h3 class="title">{$oDocument->getTitle()}</h3>
-	<p class="author">
-		<strong>{$oDocument->getNickName()}</strong>
-	</p>
-</div>
+<include target="_header.blade.php" />
+@if ($oDocument->isExists())
+	<div class="context_data">
+		<h3 class="title">{$oDocument->getTitle()}</h3>
+		<p class="author">
+			<strong>{$oDocument->getNickName()}</strong>
+		</p>
+	</div>
+@endif
 <form action="./" method="get" onsubmit="return procFilter(this, delete_document)" class="context_message">
 	<input type="hidden" name="mid" value="{$mid}" />
 	<input type="hidden" name="page" value="{$page}" />
@@ -15,4 +17,4 @@
 		<button type="button" class="btn" onclick="history.back()">{$lang->cmd_cancel}</button>
 	</div>
 </form>
-<include target="_footer.html" />
+<include target="_footer.blade.php" />

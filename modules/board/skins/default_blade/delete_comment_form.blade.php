@@ -1,11 +1,17 @@
-<include target="_header.html" />
-<div cond="$oComment->isExists()" class="context_data">
-	<h3 class="author">
-		<a cond="$oComment->homepage" href="{$oComment->homepage}">{$oComment->getNickName()}</a>
-		<strong cond="!$oComment->homepage">{$oComment->getNickName()}</strong>
-	</h3>
-	{$oComment->getContent(false)}
-</div>
+<include target="_header.blade.php" />
+@if ($oComment->isExists())
+	<div class="context_data">
+		<h3 class="author">
+			@if ($oComment->homepage)
+				<a href="{$oComment->homepage}">{$oComment->getNickName()}</a>
+			@endif
+			@if (!$oComment->homepage)
+				<strong>{$oComment->getNickName()}</strong>
+			@endif
+		</h3>
+		{$oComment->getContent(false)|noescape}
+	</div>
+@endif
 <form action="./" method="get" onsubmit="return procFilter(this, delete_comment)" class="context_message">
 	<input type="hidden" name="mid" value="{$mid}" />
 	<input type="hidden" name="page" value="{$page}" />
@@ -17,4 +23,4 @@
 		<button type="button" class="btn" onclick="history.back()">{$lang->cmd_cancel}</button>
 	</div>
 </form>
-<include target="_footer.html" />
+<include target="_footer.blade.php" />

@@ -158,7 +158,7 @@
 	color: #3912b3;
 }
 /* Board List */
-/* list.html */
+/* list.blade.php */
 .board_list {
 	background: url(bgHeader.gif) no-repeat 0 -100px;
 }
@@ -296,7 +296,7 @@
 }
 /* Board Write */
 
-/* write_form.html */
+/* write_form.blade.php */
 .board_write {
 	background: url(bgHeader.gif) no-repeat 0 0;
 }
@@ -460,7 +460,7 @@
 }
 /* Board Read */
 
-/* _read.html */
+/* _read.blade.php */
 .board_read {
 	background: #fff url(bgHeader.gif) no-repeat 0 -50px;
 }
@@ -674,7 +674,7 @@
 	border-top: 1px solid #ddd;
 }
 /* Feedback (Trackback+Comment) */
-/* _trackback.html | _comment.html */
+/* _trackback.blade.php | _comment.blade.php */
 .feedback {
 	position: relative;
 	border: 1px solid #ddd;
@@ -925,7 +925,7 @@
 	margin: -10px 0 10px 0;
 }
 /* Pagination */
-/* list.html | _comment.html */
+/* list.blade.php | _comment.blade.php */
 .pagination {
 	margin: 0;
 	padding: 4px 0 10px 0;
@@ -1000,7 +1000,7 @@
 	margin-left: 1px;
 }
 /* Write Author */
-/* _read.html | write_form.html | comment_form.html */
+/* _read.blade.php | write_form.blade.php | comment_form.blade.php */
 .write_author {
 	float: left;
 	margin: 0 4px 0 0;
@@ -1018,7 +1018,7 @@
 	margin: 0 10px 0 0;
 }
 /* Write Comment */
-/* _read.html | comment_form.html */
+/* _read.blade.php | comment_form.blade.php */
 .write_comment {
 	position: relative;
 	margin: 10px 12px;
@@ -1037,7 +1037,7 @@
 	padding: 0 0 10px 0;
 }
 /* Context Data | Context Message */
-/* comment_form.html | delete_form.html | delete_comment_form.html | input_password_form.html | message.html */
+/* comment_form.blade.php | delete_form.blade.php | delete_comment_form.blade.php | input_password_form.blade.php | message.blade.php */
 .context_data {
 	background: #f8f8f8;
 	border-top: 2px solid #666;
