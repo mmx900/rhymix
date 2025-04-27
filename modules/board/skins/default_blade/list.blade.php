@@ -31,7 +31,7 @@
 							<th scope="col"><span><a href="{{getUrl('sort_index','regdate','order_type',$order_type)}}">{{$lang->date}}</a></span></th>
 						@endif
 						@if ($val->type=='last_update' && $val->idx==-1)
-							<th scope="col><span><a href="{{getUrl('sort_index','update_order','order_type',$order_type)}}">{{$lang->last_update}}</a></span></th>
+							<th scope="col"><span><a href="{{getUrl('sort_index','update_order','order_type',$order_type)}}">{{$lang->last_update}}</a></span></th>
 						@endif
 						@if ($val->type=='last_post' && $val->idx==-1)
 							<th scope="col"><span><a href="{{getUrl('sort_index','update_order','order_type',$order_type)}}">{{$lang->last_post}}</a></span></th>
