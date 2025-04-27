@@ -1,4 +1,4 @@
-<include target="_header.blade.php" />
+@include ('_header.blade.php')
 @if ($oSourceComment->isExists())
 	<div class="context_data">
 		<h3 class="author">
@@ -54,4 +54,4 @@
 		</div>
 	</form>
 </div>
-<include target="_footer.blade.php" />
+@include ('_footer.blade.php')

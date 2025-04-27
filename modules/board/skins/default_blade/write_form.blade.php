@@ -1,4 +1,4 @@
-<include target="_header.blade.php" />
+@include ('_header.blade.php')
 <form action="./" method="post" onsubmit="return procFilter(this, window.insert)" class="board_write">
 	<input type="hidden" name="mid" value="{{$mid}}" />
 	<input type="hidden" name="content" value="{{$oDocument->getContentText()}}" />
@@ -110,4 +110,4 @@
 		</div>
 	</div>
 </form>
-<include target="_footer.blade.php" />
+@include ('_footer.blade.php')

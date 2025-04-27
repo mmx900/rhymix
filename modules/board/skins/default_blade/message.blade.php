@@ -1,4 +1,4 @@
-<include target="_header.blade.php" />
+@include ('_header.blade.php')
 <div class="context_message">
     <h1>{{$message}}</h1>
     <div class="btnArea">
@@ -8,4 +8,4 @@
         <button type="button" class="btn" onclick="history.back()">{{$lang->cmd_back}}</button>
     </div>
 </div>
-<include target="_footer.blade.php" />
+@include ('_footer.blade.php')

@@ -1,4 +1,4 @@
-<include target="_header.blade.php" />
+@include ('_header.blade.php')
 <div class="tagList">
 	@foreach($tag_list as $val)
 		@if($val->count>5)
@@ -24,4 +24,4 @@
 <div class="tagFooter">
     <a href="{{getUrl('act','')}}" class="btn">{{$lang->cmd_back}}</a>
 </div>
-<include target="_footer.blade.php" />
+@include ('_footer.blade.php')

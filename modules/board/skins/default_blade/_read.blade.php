@@ -129,6 +129,7 @@
 	<!-- /READ FOOTER -->
 </div>
 @if ($oDocument->allowTrackback())
-	<include target="_trackback.blade.php" />
+	@include ('_trackback.blade.php')
 @endif
-<include target="_comment.blade.php" />
+@include ('_comment.blade.php')
+

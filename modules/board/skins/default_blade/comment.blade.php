@@ -1,1 +1,1 @@
-<include target="_comment.blade.php" />
+@include ('_comment.blade.php')

@@ -1,4 +1,4 @@
-<include target="_header.blade.php" />
+@include ('_header.blade.php')
 @if ($oDocument->isExists())
 	<div class="context_data">
 		<h3 class="title">{{$oDocument->getTitle()}}</h3>
@@ -17,4 +17,4 @@
 		<button type="button" class="btn" onclick="history.back()">{{$lang->cmd_cancel}}</button>
 	</div>
 </form>
-<include target="_footer.blade.php" />
+@include ('_footer.blade.php')

@@ -1,6 +1,6 @@
-<include target="_header.blade.php" />
+@include ('_header.blade.php')
 @if ($oDocument->isExists())
-	<include target="_read.blade.php" />
+	@include ('_read.blade.php')
 @endif
 @if (isset($list_config))
 	<div class="board_list" id="board_list">
@@ -282,4 +282,4 @@
 	@endif
 	<a href="{{getUrl('', 'mid', $mid, 'act', 'dispBoardTagList')}}" class="tagSearch" title="{{$lang->tag}}">{{$lang->tag}}</a>
 </div>
-<include target="_footer.blade.php" />
+@include ('_footer.blade.php')
