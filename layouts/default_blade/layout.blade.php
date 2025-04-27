@@ -40,12 +40,12 @@
 		<nav class="gnb" id="gnb">
 			<ul>
 				@foreach ($GNB->list as $key1 => $val1)
-					<li class="active"|cond="$val1['selected']">
+					<li @class(['active' => $val1['selected']])>
 						<a href="{$val1['href']}" class="{$val1['class']}"|cond="!empty($val1['class'])" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a>
 						@if ($val1['list'])
 							<ul>
 								@foreach ($val1['list'] as $key2 => $val2)
-									<li class="active"|cond="$val2['selected']">
+									<li @class(['active' => $val2['selected']])>
 										<a href="{$val2['href']}" class="{$val2['class']}"|cond="!empty($val2['class'])" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
 									</li>
 								@endforeach
@@ -59,7 +59,10 @@
 	</header>
 	<!-- VISUAL | DEFAULT -->
 	@if (!$layout_info->VISUAL_IMAGE_1 && !$layout_info->VISUAL_IMAGE_2 && !$layout_info->VISUAL_IMAGE_3 && $layout_info->VISUAL_USE=='YES')
-		<div class="visual main"|cond="$layout_info->LAYOUT_TYPE=='MAIN_PAGE'" class="visual sub"|cond="$layout_info->LAYOUT_TYPE=='SUB_PAGE'">
+		<div @class([
+			"visual main" => $layout_info->LAYOUT_TYPE=='MAIN_PAGE',
+			"visual sub" => $layout_info->LAYOUT_TYPE=='SUB_PAGE'
+		])>
 			<div class="list">
 				@if ($layout_info->LAYOUT_TYPE=='MAIN_PAGE')
 					<a href="{geturl('','module','admin','act','dispAdminConfigGeneral')}" class="item i1">
@@ -92,7 +95,10 @@
 	@endif
 	<!-- VISUAL | USER DEFINE -->
 	@if (($layout_info->VISUAL_IMAGE_1 || $layout_info->VISUAL_IMAGE_2 || $layout_info->VISUAL_IMAGE_3) && $layout_info->VISUAL_USE=='YES')
-		<div class="visual main"|cond="$layout_info->LAYOUT_TYPE=='MAIN_PAGE'" class="visual sub"|cond="$layout_info->LAYOUT_TYPE=='SUB_PAGE'">
+		<div @class([
+			"visual main" => $layout_info->LAYOUT_TYPE=='MAIN_PAGE',
+			"visual sub" => $layout_info->LAYOUT_TYPE=='SUB_PAGE'
+		])>
 			<div class="list">
 				@if ($layout_info->VISUAL_IMAGE_1)
 					<a href="{$layout_info->VISUAL_LINK_1}" class="item i1">
@@ -118,7 +124,10 @@
 		</div>
 	@endif
 	<!-- /VISUAL -->
-	<div class="body main"|cond="$layout_info->LAYOUT_TYPE=='MAIN_PAGE'" class="body sub"|cond="$layout_info->LAYOUT_TYPE=='SUB_PAGE'">
+	<div @class([
+		"body main" => $layout_info->LAYOUT_TYPE=='MAIN_PAGE',
+		"body sub" => $layout_info->LAYOUT_TYPE=='SUB_PAGE'
+	])>
 		<!-- LNB -->
 		@if ($layout_info->LAYOUT_TYPE == 'SUB_PAGE')
 			<nav class="lnb">
@@ -133,12 +142,12 @@
 					@foreach ($GNB->list as $key1 =>$val1)
 						<ul>
 							@foreach ($val1['list'] as $key2 => $val2)
-								<li class="active"|cond="$val2['selected']">
+								<li @class(['active' => $val2['selected']])>
 									<a href="{$val2['href']}" class="{$val2['class']}"|cond="!empty($val2['class'])" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
 									@if ($val2['list'])
 										<ul>
 											@foreach ($val2['list'] as $key3 =>$val3)
-												<li class="active"|cond="$val3['selected']">
+												<li @class(['active' => $val3['selected']])>
 													<a href="{$val3['href']}" class="{$val3['class']}"|cond="!empty($val3['class'])" target="_blank"|cond="$val3['open_window']=='Y'">{$val3['link']}</a>
 												</li>
 											@endforeach

@@ -36,11 +36,11 @@
 				</span>
 			@endif
 			@if ($is_logged)
-				<input type="checkbox" name="notify_message" value="Y" checked="checked"|cond="$oComment->get('notify_message')=='Y'" id="notify_message" class="iCheck" />
+				<input type="checkbox" name="notify_message" value="Y" @checked($oComment->get('notify_message')=='Y') id="notify_message" class="iCheck" />
 				<label for="notify_message">{$lang->notify}</label>
 			@endif
 			@if ($module_info->secret=='Y')
-				<input type="checkbox" name="is_secret" value="Y" id="is_secret" checked="checked"|cond="$oComment->get('is_secret')=='Y'" class="iCheck" />
+				<input type="checkbox" name="is_secret" value="Y" id="is_secret" @checked($oComment->get('is_secret')=='Y') class="iCheck" />
 				<label for="is_secret">{$lang->secret}</label>
 			@endif
 		</div>

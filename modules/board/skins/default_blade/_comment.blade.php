@@ -6,7 +6,10 @@
 	@if ($oDocument->getCommentcount())
 		<ul class="fbList">
 			@foreach ($oDocument->getComments() as $key => $comment)
-				<li class="fbItem"|cond="!$comment->get('depth')" class="fbItem indent indent{($comment->get('depth'))}"|cond="$comment->get('depth')" id="comment_{$comment->comment_srl}">
+				<li @class([
+					'fbItem' => !$comment->get('depth'),
+					'fbItem indent indent' . $comment->get('depth') => $comment->get('depth')
+				]) id="comment_{$comment->comment_srl}">
 					<div class="fbMeta">
 						@if ($comment->getProfileImage())
 							<img src="{$comment->getProfileImage()}" alt="Profile" class="profile" />

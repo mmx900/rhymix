@@ -45,13 +45,13 @@
 	@endif
 	@if ($module_info->use_category=='Y')
 		<ul class="cTab">
-			<li class="on"|cond="empty($category)"><a href="{getUrl('category','','page','')}">{$lang->total}</a></li>
+			<li @class(['on' => empty($category)])><a href="{getUrl('category','','page','')}">{$lang->total}</a></li>
 			@foreach ($cate_list as $key=>$val)
-				<li class="on"|cond="($category ?? 0) == $val->category_srl"><a href="{getUrl('category',$val->category_srl,'document_srl','', 'page', '')}">{$val->title}<!--<em cond="$val->document_count">[{$val->document_count}]</em>--></a>
+				<li @class(["on" => ($category ?? 0) == $val->category_srl])><a href="{getUrl('category',$val->category_srl,'document_srl','', 'page', '')}">{$val->title}<!--<em cond="$val->document_count">[{$val->document_count}]</em>--></a>
 					@if (count($val->children))
 						<ul>
 							@foreach ($val->children as $idx => $item)
-							<li class="on_"|cond="$category==$item->category_srl"><a href="{getUrl('category',$item->category_srl,'document_srl','', 'page', '')}">{$item->title}<!--<em cond="$val->document_count">[{$item->document_count}]</em>--></a></li>
+								<li @class(["on_" => $category==$item->category_srl])><a href="{getUrl('category',$item->category_srl,'document_srl','', 'page', '')}">{$item->title}<!--<em cond="$val->document_count">[{$item->document_count}]</em>--></a></li>
 							@endforeach
 						</ul>
 					@endif

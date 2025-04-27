@@ -58,7 +58,7 @@
 			@if (!$document_list && !$notice_list)
 				<tbody>
 					<tr>
-						<td colspan="{count($list_config)}"|cond="!$grant->manager" colspan="{count($list_config)+1}"|cond="$grant->manager">
+						<td colspan="{{ !$grant->manager ? count($list_config) : count($list_config) + 1 }}">
 							<p style="text-align:center">{$lang->no_documents}</p>
 						</td>
 					</tr>
@@ -149,7 +149,7 @@
 								@endif
 							@endforeach
 							@if ($grant->manager)
-									<td class="check"><input type="checkbox" name="cart" value="{$document->document_srl}" class="iCheck" title="Check This Article" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" /></td>
+									<td class="check"><input type="checkbox" name="cart" value="{$document->document_srl}" class="iCheck" title="Check This Article" onclick="doAddDocumentCart(this)" @checked($document->isCarted()) /></td>
 							@endif
 						</tr>
 					@endforeach
@@ -232,7 +232,7 @@
 								@endif
 							@endforeach
 							@if ($grant->manager)
-								<td class="check"><input type="checkbox" name="cart" value="{$document->document_srl}" class="iCheck" title="Check This Article" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" /></td>
+								<td class="check"><input type="checkbox" name="cart" value="{$document->document_srl}" class="iCheck" title="Check This Article" onclick="doAddDocumentCart(this)" @checked($document->isCarted()) /></td>
 							@endif
 						</tr>
 					@endforeach
@@ -271,7 +271,7 @@
 			<input type="text" name="search_keyword" value="{escape($search_keyword, false)}" title="{$lang->cmd_search}" class="iText" />
 			<select name="search_target">
 				@foreach ($search_option as $key=>$val)
-					<option value="{$key}" selected="selected"|cond="$search_target==$key">{$val}</option>
+					<option value="{$key}" @selected($search_target==$key)>{$val}</option>
 				@endforeach
 			</select>
 			<button type="submit" class="btn">{$lang->cmd_search}</button>
