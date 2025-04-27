@@ -14,14 +14,14 @@
 		@endif
 
 		@if($layout_info->mid)
-			<a @class([$tag_class => $tag_class]) href="{getUrl('','mid',$layout_info->mid,'search_target','tag','search_keyword',$val->tag)}">{htmlspecialchars($val->tag)}</a>
+			<a @class([$tag_class => $tag_class]) href="{{getUrl('','mid',$layout_info->mid,'search_target','tag','search_keyword',$val->tag)}}">{{htmlspecialchars($val->tag)}}</a>
 		@else
-			<a @class([$tag_class => $tag_class]) href="{getUrl('','mid',$mid,'search_target','tag','search_keyword',$val->tag)}">{htmlspecialchars($val->tag)}</a>
+			<a @class([$tag_class => $tag_class]) href="{{getUrl('','mid',$mid,'search_target','tag','search_keyword',$val->tag)}}">{{htmlspecialchars($val->tag)}}</a>
 		@end
 
 	@endforeach
 </div>
 <div class="tagFooter">
-    <a href="{getUrl('act','')}" class="btn">{$lang->cmd_back}</a>
+    <a href="{{getUrl('act','')}}" class="btn">{{$lang->cmd_back}}</a>
 </div>
 <include target="_footer.blade.php" />

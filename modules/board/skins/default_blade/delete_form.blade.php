@@ -1,20 +1,20 @@
 <include target="_header.blade.php" />
 @if ($oDocument->isExists())
 	<div class="context_data">
-		<h3 class="title">{$oDocument->getTitle()}</h3>
+		<h3 class="title">{{$oDocument->getTitle()}}</h3>
 		<p class="author">
-			<strong>{$oDocument->getNickName()}</strong>
+			<strong>{{$oDocument->getNickName()}}</strong>
 		</p>
 	</div>
 @endif
 <form action="./" method="get" onsubmit="return procFilter(this, delete_document)" class="context_message">
-	<input type="hidden" name="mid" value="{$mid}" />
-	<input type="hidden" name="page" value="{$page}" />
-	<input type="hidden" name="document_srl" value="{$document_srl}" />
-	<h1>{sprintf($lang->comfirm_act_msg,$lang->document,$lang->cmd_delete,$lang->msg_rul)}</h1>
+	<input type="hidden" name="mid" value="{{$mid}}" />
+	<input type="hidden" name="page" value="{{$page}}" />
+	<input type="hidden" name="document_srl" value="{{$document_srl}}" />
+	<h1>{{sprintf($lang->comfirm_act_msg,$lang->document,$lang->cmd_delete,$lang->msg_rul)}}</h1>
 	<div class="btnArea">
-		<input type="submit" class="btn" value="{$lang->cmd_delete}" />
-		<button type="button" class="btn" onclick="history.back()">{$lang->cmd_cancel}</button>
+		<input type="submit" class="btn" value="{{$lang->cmd_delete}}" />
+		<button type="button" class="btn" onclick="history.back()">{{$lang->cmd_cancel}}</button>
 	</div>
 </form>
 <include target="_footer.blade.php" />

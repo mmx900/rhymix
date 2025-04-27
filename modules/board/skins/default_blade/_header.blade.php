@@ -29,29 +29,29 @@
 
 <div class="board">
 	@if ($m && $module_info->mobile_header_text)
-		{$module_info->mobile_header_text}
+		{{$module_info->mobile_header_text}}
 	@else
-		{$module_info->header_text}
+		{{$module_info->header_text}}
 	@endif
 	@if (!empty($module_info->title_image) || $grant->manager)
 		<div class="board_header">
 			@if ($module_info->title_image)
-				<h2><a href="{getUrl('','mid',$mid)}"><img src="{$module_info->title_image}" alt="{$module_info->title_alt}" /></a></h2>
+				<h2><a href="{{getUrl('','mid',$mid)}}"><img src="{{$module_info->title_image}}" alt="{{$module_info->title_alt}}" /></a></h2>
 			@endif
 			@if ($grant->manager)
-				<a class="setup" href="{getUrl('act','dispBoardAdminBoardInfo')}" title="{$lang->cmd_setup}">{$lang->cmd_setup}</a>
+				<a class="setup" href="{{getUrl('act','dispBoardAdminBoardInfo')}}" title="{{$lang->cmd_setup}}">{{$lang->cmd_setup}}</a>
 			@endif
 		</div>
 	@endif
 	@if ($module_info->use_category=='Y')
 		<ul class="cTab">
-			<li @class(['on' => empty($category)])><a href="{getUrl('category','','page','')}">{$lang->total}</a></li>
+			<li @class(['on' => empty($category)])><a href="{{getUrl('category','','page','')}}">{{$lang->total}}</a></li>
 			@foreach ($cate_list as $key=>$val)
-				<li @class(["on" => ($category ?? 0) == $val->category_srl])><a href="{getUrl('category',$val->category_srl,'document_srl','', 'page', '')}">{$val->title}<!--<em cond="$val->document_count">[{$val->document_count}]</em>--></a>
+				<li @class(["on" => ($category ?? 0) == $val->category_srl])><a href="{{getUrl('category',$val->category_srl,'document_srl','', 'page', '')}}">{{$val->title}}<!--<em cond="$val->document_count">[{$val->document_count}]</em>--></a>
 					@if (count($val->children))
 						<ul>
 							@foreach ($val->children as $idx => $item)
-								<li @class(["on_" => $category==$item->category_srl])><a href="{getUrl('category',$item->category_srl,'document_srl','', 'page', '')}">{$item->title}<!--<em cond="$val->document_count">[{$item->document_count}]</em>--></a></li>
+								<li @class(["on_" => $category==$item->category_srl])><a href="{{getUrl('category',$item->category_srl,'document_srl','', 'page', '')}}">{{$item->title}}<!--<em cond="$val->document_count">[{$item->document_count}]</em>--></a></li>
 							@endforeach
 						</ul>
 					@endif
